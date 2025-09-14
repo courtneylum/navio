@@ -1,0 +1,20 @@
+meta {
+  name: makeAiCall
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3001/callAi
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {"command":
+  "Please provide a detailed travel itinerary for the following destination(s) and dates: Paris - August 11-14, London - August 14-19."}
+}
+
+settings {
+  encodeUrl: true
+}
