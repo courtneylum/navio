@@ -10,6 +10,7 @@ import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import Button from '@mui/material/Button';
 
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const TravelForm = ({setDisplay}) => {
     const [cities, setCities] = useState("");
@@ -32,7 +33,7 @@ const TravelForm = ({setDisplay}) => {
 
     const createTrip = async (command) => {
         try {
-            const response = await axios.post(`http://localhost:3001/callAi`,
+            const response = await axios.post(`${apiUrl}/callAi`,
                  { command: command });
             console.log(response);
             setDisplay(response.data.tripName);

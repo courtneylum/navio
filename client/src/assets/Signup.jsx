@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 function Signup() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
@@ -11,7 +13,7 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/register", { name, email, password })
+      .post(`${apiUrl}/register`, { name, email, password })
       .then((result) => {
         console.log(result);
         navigate("/login");

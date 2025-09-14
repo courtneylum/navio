@@ -7,10 +7,6 @@ const callAzureApi = require("./azureOpenAi");
 const app = express();
 app.use(express.json());
 app.use(cors());
-console.log(process.env["MONGODB_URL"])
-console.log(process.env["AZURE_OPENAI_ENDPOINT"])
-console.log(process.env["AZURE_OPENAI_API_KEY"])
-
 mongoose.connect(process.env["MONGODB_URL"]);
 
 const itinerarySchema = new mongoose.Schema({

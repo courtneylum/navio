@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import TravelForm from "./TravelForm"
 import Button from '@mui/material/Button';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const Home = () => {
     const [itineraries, setItineraries] = useState([]);
     const [display, setDisplay] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/home`)
+        axios.get(`${apiUrl}/home`)
             .then(response => setItineraries(response.data))
             .catch(error => console.log(error));
     }, []);
