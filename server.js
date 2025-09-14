@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const TravelModel = require("./model/travel");
+const TravelModel = require("./model/Travel");
 const callAzureApi = require("./azureOpenAi");
 
 const app = express();
